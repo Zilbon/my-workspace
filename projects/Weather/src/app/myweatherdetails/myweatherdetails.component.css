@@ -1,0 +1,49 @@
+body{
+    height: 100%;
+    width: 100%;
+    
+    
+}
+.principal{
+    display: flex;
+    flex-direction: column ;
+    background-color: 	#bbd0d5;
+
+}
+
+
+.titre{
+    background-color:	#bbd0d5 ;
+    align-content: center;
+    
+}
+.divUl{
+    display: flex;
+    flex-direction: row;
+    background-color: 	#bbd0d5;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.divLi{
+    border: solid black 2px;
+    width: 20vw;
+    height: 10vw;
+    margin: 1vw;
+    background-image: linear-gradient(to top, 	#1f3236 , #bbd0d5);
+    max-width: 200px;
+    min-width: 100px;
+}
+p{
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 3px 2px #85b5c0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#3f6f79 ;
+}
+.WeatherForcast{
+   text-align: center;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

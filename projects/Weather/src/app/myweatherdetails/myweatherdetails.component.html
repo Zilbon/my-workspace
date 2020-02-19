@@ -1,0 +1,25 @@
+
+ <div class="WeatherForcast">
+  <h1 >Weather Forcast</h1>
+</div>
+<div class="divUl"> 
+  
+    <div *ngFor="let weather of selectedCity.list">
+      
+      <div *ngFor="let weatherItem of weather.weather" class="divLi">
+        {{weather.dt * 1000 | date:'EEE dd MMM HH:mm'}}
+        <br>
+        <span class="badge">{{weatherItem.main}}</span> 
+        <br>
+        {{weatherItem.description}}
+        <br>
+        <img src="http://openweathermap.org/img/wn/{{weatherItem.icon}}@2x.png" >
+        <br>
+      
+        {{weather.main.temp | number:'1.0-0'}} 
+        <br>
+        
+      </div>
+
+    </div>
+</div>

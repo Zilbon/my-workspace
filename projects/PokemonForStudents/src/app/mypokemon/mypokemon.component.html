@@ -1,0 +1,18 @@
+<!-- <h2>{{pokemon.name | uppercase}} Details</h2>
+<div><span>id: </span>{{pokemon.id}}</div>
+<div><span>name: </span>{{pokemon.name}}</div>
+ -->
+<!-- <app-pokemon-detail [selectedPokemon]="selectedPokemon"></app-pokemon-detail> -->
+<div class="pere">
+<h2 >My Pokemons</h2>
+<div *ngIf="pokemons">
+    <form >
+        <select (change)="onSelect($event.target.value)">
+            <option *ngFor=" let pok of pokemons.results">
+                {{pok.name}}
+            </option>
+        </select>
+    </form>
+
+</div>
+</div>

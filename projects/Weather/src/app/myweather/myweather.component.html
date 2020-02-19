@@ -1,0 +1,21 @@
+<div class="titre">
+  
+       
+        
+        
+    <div >
+        <div>Liste des villes</div>
+        <div>
+        <form>
+            <select (change)="onSelect($event.target.value)"> 
+                 <option *ngFor=" let selectedCity of listOfCities.default" > 
+                    {{selectedCity.name}}
+                </option>
+            </select>
+        </form>
+    </div>
+
+    </div>
+</div>
+ 
+

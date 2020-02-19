@@ -1,0 +1,23 @@
+<!-- <h2>{{pokemonTest.name | uppercase}} DETAILS </h2>
+<div><span>ID: </span>{{pokemonTest.id | uppercase}}</div>
+<div><span>NAME: </span>{{pokemonTest.name | uppercase}}</div>
+
+<div>{{pokemonTest | json}}</div>
+
+<div>{{pokemonTableau[5].name | json}}</div>
+<div>{{pokemonTableau[0].name}}</div> -->
+<app-mypokemondetails [pokemon]="selectedPokemon"></app-mypokemondetails>
+<h2>My Pokemons</h2>
+<ul class="pokemon">
+    <li *ngFor="let pok of pokemons" (click)="onSelect(pok)">
+       <span class="badge">{{pok.url}}</span> {{pok.name}}
+   </li>
+</ul>
+
+
+
+
+
+
+
+ 

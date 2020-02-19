@@ -1,0 +1,26 @@
+<div *ngIf="PokemonDetails" class="pere">
+
+    <h2> Details</h2>
+    <div>
+        <p> <b><span>id: </span> {{PokemonDetails.id}}</b></p>
+    </div>
+    <div>
+        <label>
+            <p> <b> name:{{PokemonDetails.name | uppercase}}</b></p>
+        </label>
+        <br>
+        <label>
+            <p> <b> url: {{PokemonDetails.species.url}}</b></p>
+        </label>
+        <br>
+        <div class="DivImg1"><img src="{{PokemonDetails.sprites.back_default}}" alt="back_default"></div>
+        <br>
+        <div class="DivImg2"><img src="{{PokemonDetails.sprites.back_shiny}}" alt="back_shiny"></div>
+        <br>
+        <div class="DivImg3"><img src="{{PokemonDetails.sprites.front_default}}" alt="front_default"></div>
+        <br>
+        <div class="DivImg4"><img src="{{PokemonDetails.sprites.front_shiny}}" alt="front_shiny"></div>
+
+    </div>
+
+</div>

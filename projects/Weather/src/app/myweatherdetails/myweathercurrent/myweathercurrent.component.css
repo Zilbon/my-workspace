@@ -1,0 +1,21 @@
+.Square{
+    background-image: linear-gradient(to top, 	#1f3236 , #bbd0d5);
+    width: 100%;
+    text-align: center;
+
+}
+p{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+h2{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.CurrentWeather{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }

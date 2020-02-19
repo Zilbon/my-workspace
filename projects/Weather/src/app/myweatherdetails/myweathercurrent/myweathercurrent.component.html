@@ -1,0 +1,35 @@
+
+<div class="CurrentWeather">
+    <h1 >Current Weather</h1>
+  </div>
+<div class="Square" >
+    
+<h2>{{selectedCity.name}}</h2>
+<div>
+    <div *ngFor="let weather of selectedCity.weather">
+
+<p>{{selectedCity.dt * 1000 | date:'EEE dd MMM HH:mm'}}</p>
+<br>
+<p><b>{{weather.main}}</b></p>
+<br>
+<b>{{weather.description}}</b>
+<br>
+<img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" >
+
+</div>
+<p><b>{{selectedCity.main.pressure/10}} kpa</b></p>
+<br>
+<p><b>{{selectedCity.main.humidity}}%</b></p>
+<br>
+<p><b>{{selectedCity.main.temp | number:'1.0-0'}}°C</b></p>
+<div >
+    
+</div>
+
+
+
+
+</div>
+</div>
+
+
