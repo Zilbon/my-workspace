@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { MyweatherdetailsModule } from './myweatherdetails/myweatherdetails.module';
 import { MyweatherModule } from './myweather/myweather.module';
 import{MyweatherService} from './myweather.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent 
+    AppComponent,
+    PageNotFoundComponent 
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import{MyweatherService} from './myweather.service';
 
 
   providers: [ MyweatherService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [PageNotFoundComponent]
 })
 export class AppModule { }
