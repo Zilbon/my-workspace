@@ -1,0 +1,36 @@
+.pere{
+    background-color: #e700ad;
+    text-align: center;
+    
+     
+}
+h2{
+    font-size: 5vw;
+    color: #decbff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    font-size: 1.5vw;
+    color: #decbff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+img{
+    height: 12.5vw;
+}
+
+.DivImg1{
+    background-color: #e1a0b6;
+
+}
+.DivImg2{
+    background-color: #ff4dd6;
+    
+}
+.DivImg3{
+    background-color: #e1a0b6;
+    
+}
+.DivImg4{
+    background-color: #ff4dd6;
+    
+}
