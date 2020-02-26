@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { Pokemon } from '../../pokemon';
+import { Pokemon } from '../pokemon';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { IPokemon } from '../../IPokemon';
-import { PokemonService } from '../../pokemon.service';
+import { IPokemon } from '../IPokemon';
+import { PokemonService } from '../pokemon.service';
 import { Observable } from 'rxjs';
 
 
