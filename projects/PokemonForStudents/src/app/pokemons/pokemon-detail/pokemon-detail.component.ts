@@ -1,8 +1,11 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Pokemon } from '../../pokemon';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { IPokemon } from '../IPokemon';
-import { PokemonService } from '../pokemon.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { IPokemon } from '../../IPokemon';
+import { PokemonService } from '../../pokemon.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -17,10 +20,12 @@ export class PokemonDetailComponent implements OnInit, OnChanges {
   PokemonDetails;
 
   selectedPokemonFromService;
+  pokemon$: Observable<IPokemon>
 
   //selectedPokemon: IPokemon;
 
-  constructor(private http: HttpClient, private pokemonservice: PokemonService) {
+  constructor(private http: HttpClient, private pokemonservice: PokemonService,private route: ActivatedRoute,
+    private router: Router,) {
     /* this.selectedPokemonFromService = pokemonservice.getPokemon(); */
     
 
@@ -37,6 +42,21 @@ export class PokemonDetailComponent implements OnInit, OnChanges {
       this.fetchDetails(this.selectedPokemon);
       console.log('subscribe pokemon' + this.selectedPokemon);
     });
+    this.pokemon$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        // getPokemon nous renvoie un observable de IPokemon getPokemon(name: string): Observable<IPokemon>
+        // pokemon correspondant (name) dans la liste
+        this.pokemonservice.getPokemon(params.get('name')))
+    );
+    
+    this.pokemon$.subscribe(
+      (value) => {
+        this.selectedPokemon = value;
+        console.log("POKEMON subscribe to selectedPokemon = ");
+        console.log(value);
+      });
+ 
+ 
   }
 
   ngOnChanges(changes: SimpleChanges): void {

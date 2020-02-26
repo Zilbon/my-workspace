@@ -22,9 +22,10 @@ import { PokemonsModule } from './pokemons/pokemons.module';
 
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    PokemonsModule,
+    AppRoutingModule,
     PokemonsModule
   ],
   

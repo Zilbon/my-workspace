@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import {CombatCenterComponent} from '../combat-center/combat-center.component';
 import {MypokemonComponent} from './mypokemon/mypokemon.component';
 import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component'
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 
 
 const routes: Routes = [
   /* { path: 'combat-center', component: CombatCenterComponent }, */
   { path: 'mypokemon', component: MypokemonComponent },
+ { path: 'pokemon-detail/:name', component: PokemonDetailComponent },
   {
     path: '',
     redirectTo: '/mypokemon',

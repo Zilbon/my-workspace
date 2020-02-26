@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Pokemon } from './pokemon';
 //import { POKEMON } from './mock-pokemons';
 
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { PokemonService } from '../pokemon.service';
+import { PokemonService } from '../../pokemon.service';
 
 
 @Component({
@@ -21,13 +21,26 @@ export class MypokemonComponent implements OnInit {
   //pokemons = POKEMON;
   pokemons;
   pokemonsDetails;
+  listOfPokemons;
   
 
   selectedPokemon: Pokemon;
 
   constructor(private http: HttpClient, private pokemonservice: PokemonService) { 
+    this.pokemonservice.getPokemons()
+     .subscribe(
+       (value) => {
+         this.listOfPokemons = value;
+         console.log("POKEMON subscribe to getPokemons value = ");
+         console.log(value);
+       }
+     );
+
+
+ 
     
-  }
+      }
+    
 
   ngOnInit() {
     this.http.get('https://pokeapi.co/api/v2/pokemon/',
