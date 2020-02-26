@@ -24,11 +24,16 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
+<<<<<<< HEAD
+    PokemonsModule,
+    AppRoutingModule,
+    PokemonsModule
+=======
     MypokemonModule,
     PokemonDetailsModule
+>>>>>>> parent of ff15560... Pokemons module + routing
   ],
   
   providers: [
