@@ -21,8 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MyweatherdetailsModule,
-    MyweatherModule
+     MyweatherdetailsModule,
+   /* MyweatherModule */
   ],
 
 

@@ -8,12 +8,12 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 
 
 const routes: Routes = [
-{path: 'Ville', component: MyWeatherComponent},
-{path: 'Details', component:MyWeatherDetailsComponent},
-{path: 'Courante', component: MyweathercurrentComponent },
+{path: 'ville', component: MyWeatherComponent},
+{path: 'details/:id', component:MyWeatherDetailsComponent},
+{path: 'courante/:id', component: MyweathercurrentComponent },
 {
   path:'',
-  redirectTo:'/Ville',
+  redirectTo:'/ville',
   pathMatch:'full'
 },
 {path: '**', component : PageNotFoundComponent}
@@ -21,7 +21,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    { enableTracing: true } )],
+    /* { enableTracing: true } */ )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

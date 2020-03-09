@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CombatCenterComponent} from '../combat-center/combat-center.component';
 import {MypokemonComponent} from './mypokemon/mypokemon.component';
 import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component'
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';

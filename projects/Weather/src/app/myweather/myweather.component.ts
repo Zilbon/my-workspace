@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as cityList from './city.list.json';
+/* import * as cityList from './city.list.json'; */
 import { ICity } from './ICity';
 import { MyweatherService } from '../myweather.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -15,6 +19,7 @@ export class MyWeatherComponent implements OnInit {
   defaultCity;
   selectedCity: ICity;
   selectedCityFromService;
+  City$:Observable<ICity>
 
   constructor(private meteo : MyweatherService) {
     console.log("CITY constructor this.selectedCity: ")
@@ -23,9 +28,25 @@ export class MyWeatherComponent implements OnInit {
 
 
   ngOnInit() {
-    this.listOfCities = cityList;
-    console.log("Liste Des Villes:");
-    console.log(this.listOfCities);
+    this.meteo.getCities().subscribe(
+      (value) =>{
+        this.listOfCities = value;
+        console.log("CITIES subscribe to getCities value =")
+        console.log(value);
+
+
+      }
+ 
+
+
+   
+
+
+
+
+    );
+
+   
 
   }
 

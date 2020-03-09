@@ -3,6 +3,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { ICity } from '../myweather/ICity';
 import { MyweatherService } from '../myweather.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 
@@ -13,10 +16,16 @@ import { MyweatherService } from '../myweather.service';
 })
 export class MyWeatherDetailsComponent implements OnInit {
 
-  @Input() selectedCity: ICity;
+  @Input() selectedCity:  ICity;
+
+  City$:Observable<ICity>
+
+  
  
 
-  constructor(private http: HttpClient,private myweatherservice : MyweatherService) {
+  constructor(private http: HttpClient,private myweatherservice : MyweatherService,
+    private route: ActivatedRoute,
+    private router: Router,) {
     console.log("WEATHER constructor");
 
     console.log("this.selectedCity = ");
@@ -41,6 +50,34 @@ export class MyWeatherDetailsComponent implements OnInit {
       this.selectedCity = value;
       this.fetchDetails();
     });    
+
+
+
+
+
+    /*$$$$$$$$$$$$$$$$  A DEMANDER A YOLAINE  $$$$$$$$$$$$$$$$$$$$$*/
+
+    /*!!!! DIAPO 65 AUSSI !!!!!!*/
+
+    this.City$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+      
+      this.myweatherservice.getCity(params.get('name')))
+   
+
+
+    );
+    this.City$.subscribe(
+      (value) => {
+        this.selectedCity = value;
+        console.log("Ville subscribe to selectedCity = ");
+        console.log(value);
+      });
+ 
+    
+    
+
+
   }
   fetchDetails() {
 

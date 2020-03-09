@@ -1,21 +1,32 @@
 <div class="titre">
-  
-       
-        
-        
-    <div >
+
+
+
+
+    <div>
         <div>Liste des villes</div>
         <div>
-        <form>
+            <ul>
+                <li *ngFor="let selectedCity of listOfCities">
+                     <a [routerLink]="['/details', selectedCity.id]">
+                        {{selectedCity.name}}
+                       
+                    </a> 
+                </li>
+            </ul>
+
+
+            <!--  <form>
             <select (change)="onSelect($event.target.value)"> 
-                 <option *ngFor=" let selectedCity of listOfCities.default" > 
-                    {{selectedCity.name}}
+                 <option *ngFor=" let selectedCity of listOfCities" > 
+                     <a [routerLink]="['/myweatherdetails', selectedCity.name]"></a>
+
+                     {{selectedCity.name}}
+                    
                 </option>
             </select>
-        </form>
-    </div>
+        </form>  -->
+        </div>
 
     </div>
 </div>
- 
-
