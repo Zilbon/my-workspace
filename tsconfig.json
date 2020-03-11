@@ -18,7 +18,16 @@
       "es2018",
       "dom"
     ],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@src/*": [
+        "projects/Weather/src/*.android.ts",
+        "projects/Weather/src/*.ios.ts",
+        "projects/Weather/src/*.tns.ts",
+        "projects/Weather/src/*.web.ts",
+        "projects/Weather/src/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "paths": {
+      "@src/*": [
+        "projects/Weather/src/*.tns.ts",
+        "projects/Weather/src/*.ts"
+      ]
+    }
+  },
+  "files": [
+    "projects/Weather/src/main.tns.ts"
+  ]
+}

@@ -712,8 +712,10 @@
           }
         }
       }
-    }},
-    
-  "defaultProject": "Pokemon"
+    }
+  },
+  "defaultProject": "Pokemon",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }
-
