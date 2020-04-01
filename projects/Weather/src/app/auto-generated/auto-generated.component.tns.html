@@ -1,1 +1,32 @@
-<Button text="auto-generated works!" class="btn btn-primary"></Button>
+<StackLayout orientation="vertical" width="750" height="750" backgroundColor="lightgray">
+
+    
+
+        <SearchBar hint="Enter search term here ..."
+            [text]="searchPhrase" (textChange)="onTextChanged($event)" 
+            (clear)="onClear($event)" (submit)="onSubmit($event)">
+        </SearchBar>
+
+    
+        <Slider value="10" minValue="0" maxValue="100"
+        (valueChange)="onSliderValueChange($event)">
+</Slider>
+
+       
+
+    <DatePicker year="1980" month="4" day="20"
+            [minDate]="minDate" [maxDate]="maxDate"
+            (dateChange)="onDateChanged($event)" 
+            (dayChange)="onDayChanged($event)" 
+            (monthChange)="onMonthChanged($event)" 
+            (yearChange)="onYearChanged($event)" 
+            (loaded)="onDatePickerLoaded($event)"
+            verticalAlignment="center">
+</DatePicker>
+
+<Button text="Tap me!" ></Button>
+
+<Switch checked="true" (checkedChange)="onCheckedChange($event)"></Switch>
+
+</StackLayout>
+

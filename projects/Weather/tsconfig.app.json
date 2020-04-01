@@ -12,9 +12,7 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts",
-    "projects/Weather/src/main.ts",
-    "projects/Weather/src/polyfills.ts"
+    "src/polyfills.ts"
   ],
   "exclude": [
     "src/test.ts",
